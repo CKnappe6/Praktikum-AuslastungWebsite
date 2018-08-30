@@ -1,157 +1,128 @@
 <!DOCTYPE html>
-<html>
-      
+<html>    
 <head>
     <meta charset="utf-8">
-    <title>networkscan</title>
+    <title>Bibliotheksauslastung UB Leipzig</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Einbinden des Bootstrap-Stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Einbinden der jQuery-Bibliothek -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <!-- Einbinden der Bootstrap-JavaScript-Plugins -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link href="" rel="stylesheet" type="text/css" />
-    <script>
-      var newsrc = "ampel_gruen.jpg";
-      
-      
-    function changeImage() {
-    if ( newsrc == "ampel_gruen.jpg" ) {
-    document.images["pic"].src = "ampel_gruen.jpg";
-    document.images["pic"].alt = "Ampelgrün";
-    newsrc  = "ampel_rot.jpg";
-    }
-    else if ( newscr = "ampel_rot.jpg" ) {
-    document.images["pic"].src = "ampel_rot.jpg";
-    document.images["pic"].alt = "Ampelrot";
-    newsrc  = "ampel_gelb.jpg";
-    }
-    else {
-    document.images["pic"].src = "ampel_gelb.jpg";
-    document.images["pic"].alt = "Ampelgelb";
-    newsrc  = "ampel_gruen.jpg";
-    }
-  }
-    </script>
-    <script>
-    function change() {
-   const img1 = "ampel_gruen.jpg";
-   const img2 = "ampel_rot.jpg";
-   const imgElement = document.getElementById('ampel');
-   
-   imgElement.src = (imgElement.src === img1)? img2 : img1;
-}
-</script>
-
-    <style type="text/css">
-            table .collapse.in {	display:table-row;}
-    </style>
+    <script src="index.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <section class="container">
-      <h1>Bibliotheken im Überblick</h1>
+  <section class="container">
+    <h1>Bibliotheken im Überblick</h1>
+    <p>Hier sehen Sie jede Bibliothek der UB Leipzig mit ihrem Standort und ihre Frequentierung</p>
 
-      <p>Hier sehen Sie jede Bibliothek der UB Leipzig mit ihrem Standort und ihre Frequentierung</p>
-
-
-      <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->
-      <table class="table table-responsive table-hover">
+    <!-- Tabelle mit abwechselnder Zellenhintergrundfarbe und Außenrahmen -->
+    <table class="table table-responsive table-hover">
       <thead>
-          <tr>
-            <th>Name</th>
-            <th>Adresse</th>
-            <th>Derzeitige Belegung</th>
+        <tr>
+          <th>Name</th>
+          <th>Adresse</th>
+          <th>Derzeitige Belegung</th>
           </tr>
         </thead>
+        
         <tbody>
-          <tr class="clickable" id="row1" data-toggle="collapse" data-target=".row1" style="cursor : pointer;">
-            <td><img src="fassade_albertina.jpg" id="ampel" width="180" height="200" align="right" alt="Albertina">Bibliotheca Albertina<br>Geistes- und Sozial­wissen­schaften</td>
-            <td>Beethovenstraße 6 </td>
-            <td><img src="ampel_gruen.jpg" id="ampel" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;" /></td> 
+          <tr class="clickable" id="row1" data-toggle="collapse" data-target=".row1">
+          <td><img src="images/orte/fassade_albertina.jpg" class="ort"  alt="Albertina">Bibliotheca Albertina<br>Geistes- und Sozial­wissen­schaften</td>
+          <td>Beethovenstraße 6</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertinaGesamt" class="ampel"/></td> 
         </tr>
-        <tr class="collapse row1">
+          <tr class="collapse row1">
             <td>Cafeteria</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" id="ampel" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;" /></td>
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina01" class="ampel"/></td> 
           </tr>
-        <tr class="collapse row1">
+          <tr class="collapse row1">
             <td>Haupthalle</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina02" class="ampel"/></td> 
           </tr>
-        <tr class="collapse row1">
+          <tr class="collapse row1">
             <td>Lesesaal Mitte</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina03" class="ampel"/></td> 
           </tr>
-        <tr class="collapse row1">
+          <tr class="collapse row1">
             <td>Lesesaal Mitte 1. OG</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-        </tr>
-        <tr class="collapse row1">
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina04" class="ampel"/></td> 
+          </tr>
+          <tr class="collapse row1">
             <td>Lesesaal Ost</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina05" class="ampel"/></td> 
           </tr>
-        <tr class="collapse row1">
+          <tr class="collapse row1">
             <td>Lesesaal West</td>
             <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
+            <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina06" class="ampel"/></td> 
           </tr>
-        <tr class="collapse row1">
-            <td>Offenes Magazin</td>
-            <td></td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>       
-          <tr>
-            <td><img src="campusbib.jpg" id="ampel" width="180" height="200" align="right" alt="Campusbib">Campus-Bibliothek<br>Lehrbuchsammlung / Informatik / Kommunikations- und Medienwissenschaft <br>Mathematik / Psychologie / Wirtschaftswissenschaft</td>
-            <td>Universitätsstraße 3 (im Hörsaalgebäude)</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="Erzspobib.png" id="ampel" width="180" height="200" align="right" alt="Erzspobib">Bibliothek Erziehungs- und Sportwissenschaft</td>
-            <td>Marschnerstraße 29E (Haus 5)</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="ReWibib.jpg" id="ampel" width="180" height="200" align="right" alt="ReWibib">Bibliothek Rechtswissenschaft</td>
-            <td>Burgstraße 27</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td>Bibliothek Medizin/Naturwissenschaften<br>Biowissenschaft / Chemie/Physik / Geographie / Geowissenschaft / Medizin</td>
-            <td>Umzug in die Liebigstraße 23/25</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="archbib.jpg" id="ampel" width="180" height="200" align="right" alt="Archbib">Bibliothek klassische Archäologie und Ur- und Frühgeschichte</td>
-            <td>Ritterstraße 14</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="kunstbib.jpg" id="ampel" width="180" height="200" align="right" alt="Kunstbib">Bibliothek Kunst</td>
-            <td>Dittrichring 18-20</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="Musibib.jpg" id="ampel" width="180" height="200" align="right" alt="Musibib">Bibliothek Musik</td>
-            <td>Neumarkt 9-19</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-          <tr>
-            <td><img src="Orientbib.jpg" id="ampel" width="180" height="200" align="right" alt="Orientbib">Bibliothek Orientwissenschaft</td>
-            <td>Schillerstraße 6</td>
-            <td><img class="ampelClass" src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          <tr class="collapse row1">
+          <td>Offenes Magazin</td>
+          <td></td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelAlbertina07" class="ampel"/></td> 
+        </tr> 
+
+        <tr>
+          <td><img src="images/orte/campusbib.jpg" class="ort" alt="Campusbib"/>Campus-Bibliothek<br>Lehrbuchsammlung / Informatik / Kommunikations- und Medienwissenschaft <br>Mathematik / Psychologie / Wirtschaftswissenschaft</td>
+          <td>Universitätsstraße 3 (im Hörsaalgebäude)</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelCampusGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/Erzspobib.png" class="ort" alt="Erzspobib"/>Bibliothek Erziehungs- und Sportwissenschaft</td>
+          <td>Marschnerstraße 29E (Haus 5)</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelSportGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/ReWibib.jpg" class="ort" alt="ReWibib"/>Bibliothek Rechtswissenschaft</td>
+          <td>Burgstraße 27</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelRechtGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td>Bibliothek Medizin/Naturwissenschaften<br>Biowissenschaft / Chemie / Physik / Geographie / Geowissenschaft / Medizin</td>
+          <td>Umzug in die Liebigstraße 23/25</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelMedizinGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/archbib.jpg" class="ort" alt="Archbib"/>Bibliothek klassische Archäologie und Ur- und Frühgeschichte</td>
+          <td>Ritterstraße 14</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelArchGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/kunstbib.jpg" class="ort" alt="Kunstbib"/>Bibliothek Kunst</td>
+          <td>Dittrichring 18-20</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelKunstGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/Musibib.jpg" class="ort" alt="Musibib"/>Bibliothek Musik</td>
+          <td>Neumarkt 9-19</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelMusikGesamt" class="ampel"/></td> 
+        </tr>
+
+        <tr>
+          <td><img src="images/orte/Orientbib.jpg" class="ort" alt="Orientbib"/>Bibliothek Orientwissenschaft</td>
+          <td>Schillerstraße 6</td>
+          <td><img src="images/ampeln/ampel_gruen.jpg" id="ampelOrientGesamt" class="ampel"/></td> 
+        </tr>
+
+      </tbody>
+    </table>
+
+  </section>
 </body>
 
 </html>
