@@ -39,9 +39,9 @@
     </script>
     <script>
     function change() {
-   var img1 = "ampel_gruen.jpg",
-       img2 = "ampel_rot.jpg";
-   var imgElement = document.getElementById('ampel');
+   const img1 = "ampel_gruen.jpg";
+   const img2 = "ampel_rot.jpg";
+   const imgElement = document.getElementById('ampel');
    
    imgElement.src = (imgElement.src === img1)? img2 : img1;
 }
@@ -70,8 +70,8 @@
         </thead>
         <tbody>
           <tr class="clickable" id="row1" data-toggle="collapse" data-target=".row1" style="cursor : pointer;">
-            <td><i class="glyphicon glyphicon-plus"></i>Bibliotheca Albertina<br>Geistes- und Sozial­wissen­schaften</td>
-            <td>Beethovenstraße 6</td>
+            <td><img src="fassade_albertina.jpg" id="ampel" width="180" height="200" align="right" alt="Albertina">Bibliotheca Albertina<br>Geistes- und Sozial­wissen­schaften</td>
+            <td>Beethovenstraße 6 </td>
             <td><img src="ampel_gruen.jpg" id="ampel" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;" onclick="change();"/></td> 
         </tr>
         <tr class="collapse row1">
@@ -110,44 +110,44 @@
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>       
           <tr>
-            <td>Campus-Bibliothek<br>Lehrbuchsammlung / Informatik / Kommunikations- und Medienwissenschaft <br>Mathematik / Psychologie / Wirtschaftswissenschaft</td>
+            <td><img src="campusbib.jpg" id="ampel" width="180" height="200" align="right" alt="Campusbib">Campus-Bibliothek<br>Lehrbuchsammlung / Informatik / Kommunikations- und Medienwissenschaft <br>Mathematik / Psychologie / Wirtschaftswissenschaft</td>
             <td>Universitätsstraße 3 (im Hörsaalgebäude)</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Erziehungs- und Sportwissenschaft</td>
+            <td><img src="Erzspobib.png" id="ampel" width="180" height="200" align="right" alt="Erzspobib">Bibliothek Erziehungs- und Sportwissenschaft</td>
             <td>Marschnerstraße 29E (Haus 5)</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Rechtswissenschaft</td>
+            <td><img src="ReWibib.jpg" id="ampel" width="180" height="200" align="right" alt="ReWibib">Bibliothek Rechtswissenschaft</td>
             <td>Burgstraße 27</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Medizin/Naturwissenschaften<br>Biowissenschaft / Chemie/Physik / Geographie / Geowissenschaft / Medizin</td>
+            <td>>Bibliothek Medizin/Naturwissenschaften<br>Biowissenschaft / Chemie/Physik / Geographie / Geowissenschaft / Medizin</td>
             <td>Umzug in die Liebigstraße 23/25</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek klassische Archäologie und Ur- und Frühgeschichte</td>
+            <td><img src="archbib.jpg" id="ampel" width="180" height="200" align="right" alt="Archbib">Bibliothek klassische Archäologie und Ur- und Frühgeschichte</td>
             <td>Ritterstraße 14</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Kunst</td>
+            <td><img src="kunstbib.jpg" id="ampel" width="180" height="200" align="right" alt="Kunstbib">Bibliothek Kunst</td>
             <td>Dittrichring 18-20</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Musik</td>
+            <td><img src="Musibib.jpg" id="ampel" width="180" height="200" align="right" alt="Musibib">Bibliothek Musik</td>
             <td>Neumarkt 9-19</td>
             <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
           <tr>
-            <td>Bibliothek Orientwissenschaft</td>
+            <td><img src="Orientbib.jpg" id="ampel" width="180" height="200" align="right" alt="Orientbib">Bibliothek Orientwissenschaft</td>
             <td>Schillerstraße 6</td>
-            <td><img src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
+            <td><img class="ampelClass" src="ampel_gruen.jpg" width="20" height="50" alt="Ampelgrün" style="display: block;margin: 0px auto;"></td>
           </tr>
         </tbody>
       </table>
