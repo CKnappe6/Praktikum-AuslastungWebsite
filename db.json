@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "id": "albertina_auslastung",
+      "name": "albertina",
+      "orte": {
+        "albertinaCafeteria": 30,
+        "albertinaHaupthalle": 20,
+        "albertinaLesesaalMitte": 40,
+        "albertinaLesesallMitteErstesOG": 30,
+        "albertinaLesesaalOst": 70,
+        "albertinaLesesaalWest": 90,
+        "albertinaOffenesMagazin": 50
+      }
+    }
+  ]
+}
