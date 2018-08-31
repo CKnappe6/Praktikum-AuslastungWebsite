@@ -3,11 +3,11 @@ const rp = require('request-promise-native');
 const $ = require('jquery');
 
 const albertinaAuslastung = {
-  uri: 'http://localhost:3000/posts/albertina_auslastung',
+  uri: 'https://netview.rz.uni-leipzig.de/ub_clients.txt',
+  rejectUnauthorized: false,
   headers: {
     'User-Agent': 'Request-Promise',
   },
-  json: true,
 };
 
 $(() => {
@@ -45,14 +45,14 @@ $(() => {
 
   rp(albertinaAuslastung)
     .then((response) => {
-      let i = 0;
       let sum = 0;
-      Object.keys(response.orte).forEach((key) => {
-        i += 1;
-        sum += response.orte[key];
-        setColor(key, response.orte[key]);
+      response.split(/\n/).forEach((element) => {
+        if (!element) return;
+        const area = element.split(/\|/);
+        sum += parseInt(area[1], 10);
+        setColor(area[0], area[1]);
       });
-      setColor(response.name, Math.round(sum / i));
+      setColor(response.substring(0, response.indexOf(/-/)), sum);
     })
     .catch((err) => {
       console.log(err);
