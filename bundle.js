@@ -31,12 +31,13 @@ $(() => {
     }
   });
 
-  function setColor(id, value) {
-    if (value >= 0 && value <= 40) {
+  function setColor(id, value, weigth) {
+    const weigthedValue = Math.round(value / weigth);
+    if (weigthedValue >= 0 && weigthedValue <= 40) {
       $(`#${id}`).attr('src', 'images/ampeln/ampel_gruen.jpg');
       return;
     }
-    if (value >= 41 && value <= 80) {
+    if (weigthedValue >= 41 && weigthedValue <= 80) {
       $(`#${id}`).attr('src', 'images/ampeln/ampel_gelb.jpg');
       return;
     }
@@ -50,9 +51,33 @@ $(() => {
         if (!element) return;
         const area = element.split(/\|/);
         sum += parseInt(area[1], 10);
-        setColor(area[0], area[1]);
+        switch (area[0]) {
+          case 'Albertina-LesesaalMitteErstesOG':
+            setColor(area[0], area[1], 1.2);
+            break;
+          case 'Albertina-LesesaalMitte':
+            setColor(area[0], area[1], 2);
+            break;
+          case 'Albertina-LesesaalWest':
+            setColor(area[0], area[1], 4);
+            break;
+          case 'Albertina-LesesaalOst':
+            setColor(area[0], area[1], 2);
+            break;
+          case 'Albertina-Cafeteria':
+            setColor(area[0], area[1], 1);
+            break;
+          case 'Albertina-OffenesMagazin':
+            setColor(area[0], area[1], 0.5);
+            break;
+          case 'Albertina-Haupthalle':
+            setColor(area[0], area[1], 1);
+            break;
+          default:
+            setColor(area[0], area[1], 1);
+        }
       });
-      setColor(response.substring(0, response.indexOf(/-/)), sum);
+      setColor(response.substring(0, response.indexOf('-')), sum, 8);
     })
     .catch((err) => {
       console.log(err);
