@@ -1,3 +1,7 @@
+/**
+ * TODO
+ */
+
 const $ = require('jquery');
 
 $(() => {

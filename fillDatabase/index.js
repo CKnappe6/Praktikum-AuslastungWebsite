@@ -1,3 +1,8 @@
+/**
+ * TODO
+ */
+
+
 const Sequelize = require('sequelize');
 const rp = require('request-promise-native');
 
